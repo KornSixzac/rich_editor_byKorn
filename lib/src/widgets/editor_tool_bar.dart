@@ -18,14 +18,12 @@ class EditorToolBar extends StatelessWidget {
   final Function(File video)? getVideoUrl;
   final JavascriptExecutorBase javascriptExecutor;
   final bool? enableVideo;
-  final int? iconSize;
 
   EditorToolBar({
     this.getImageUrl,
     this.getVideoUrl,
     required this.javascriptExecutor,
     this.enableVideo,
-    this.iconSize = 30,
   });
 
   @override
@@ -40,7 +38,6 @@ class EditorToolBar extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: [
                 TabButton(
-                  iconSize: iconSize,
                   tooltip: 'Insert Image',
                   icon: Icons.image,
                   onTap: () async {
@@ -64,7 +61,6 @@ class EditorToolBar extends StatelessWidget {
                 Visibility(
                   visible: enableVideo!,
                   child: TabButton(
-                    iconSize: iconSize,
                     tooltip: 'Insert video',
                     icon: Icons.video_call_sharp,
                     onTap: () async {
@@ -87,7 +83,6 @@ class EditorToolBar extends StatelessWidget {
                   ),
                 ),
                 TabButton(
-                  iconSize: 40,
                   tooltip: 'Strike through',
                   icon: Icons.format_strikethrough,
                   onTap: () async {
@@ -95,7 +90,6 @@ class EditorToolBar extends StatelessWidget {
                   },
                 ),
                 TabButton(
-                  iconSize: iconSize,
                   tooltip: 'Superscript',
                   icon: Icons.superscript,
                   onTap: () async {
@@ -103,7 +97,6 @@ class EditorToolBar extends StatelessWidget {
                   },
                 ),
                 TabButton(
-                  iconSize: iconSize,
                   tooltip: 'Subscript',
                   icon: Icons.subscript,
                   onTap: () async {
