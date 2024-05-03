@@ -5,8 +5,9 @@ class TabButton extends StatelessWidget {
   final Function? onTap;
   final String tooltip;
   final bool selected;
+  final int iconSize;
 
-  TabButton({this.icon, this.onTap, this.tooltip = '', this.selected = false});
+  TabButton({this.iconSize = 30, this.icon, this.onTap, this.tooltip = '', this.selected = false});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,7 @@ class TabButton extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: Icon(
+                    size:iconSize, 
                     icon,
                     color: selected
                         ? Theme.of(context).colorScheme.secondary
